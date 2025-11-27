@@ -54,6 +54,13 @@ class Hero(Character):
     base_info = super().show_info()
     return f'{base_info}, \nHabilidade: {self.__skill}'
   
+heroes = [
+  Hero(name='Batman', health = 100, level = 2, defense = 5, skill = 'Estrategista'),
+  Hero(name='Superman', health = 120, level = 3, defense = 6, skill = 'Força'),
+  Hero(name='Mulher Maravilha', health = 110, level = 2, defense = 7, skill = 'Agilidade'),
+  Hero(name='Flash', health = 90, level = 2, defense = 4, skill = 'Velocidade'),
+]
+  
 class Enemy(Character):
   def __init__(self, name, health, level, defense, type):
     super().__init__(name, health, level, defense)
@@ -65,3 +72,18 @@ class Enemy(Character):
   def show_info(self):
     base_info = super().show_info()
     return f'{base_info}, \nTipo: {self.__type}'
+
+enemies = [
+  Enemy(name='Coringa', health = 100, level = 2, defense = 5, type = 'Psicopata'),
+  Enemy(name='Lex Luthor', health = 110, level = 3, defense = 6, type = 'Gênio'),
+  Enemy(name='Ares', health = 120, level = 3, defense = 7, type = 'Deus da Guerra'),
+  Enemy(name='Capuz Vermelho', health = 90, level = 2, defense = 4, type = 'Vigilante'),
+]
+  
+class Game:
+  def __init__(self):
+    # self.hero = Hero(name = 'Batman', health = 100, level = 2, defense = 5, skill = 'Estrategista')
+
+    # self.enemy = Enemy(name = 'Coringa', health = 100, level = 2, defense = 5, type = 'Psicopata')
+
+    
