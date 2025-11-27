@@ -40,3 +40,28 @@ class Character:
 
     # def special_defense(self, target):
     #   pass
+  
+#Hero
+class Hero(Character):
+  def __init__(self, name, health, level, defense, skill):
+    super().__init__(name, health, level, defense)
+    self.__skill = skill
+
+  def get_skill(self):
+    return self.__skill
+  
+  def show_info(self):
+    base_info = super().show_info()
+    return f'{base_info}, \nHabilidade: {self.__skill}'
+  
+class Enemy(Character):
+  def __init__(self, name, health, level, defense, type):
+    super().__init__(name, health, level, defense)
+    self.__type = type
+  
+  def get_type(self):
+    return self.__type
+  
+  def show_info(self):
+    base_info = super().show_info()
+    return f'{base_info}, \nTipo: {self.__type}'
