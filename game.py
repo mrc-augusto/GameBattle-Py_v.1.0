@@ -55,10 +55,34 @@ class Hero(Character):
     return f'{base_info}, \nHabilidade: {self.__skill}'
   
 heroes = [
-  Hero(name='Batman', health = 100, level = 2, defense = 5, skill = 'Estrategista'),
-  Hero(name='Superman', health = 120, level = 3, defense = 6, skill = 'Força'),
-  Hero(name='Mulher Maravilha', health = 110, level = 2, defense = 7, skill = 'Agilidade'),
-  Hero(name='Flash', health = 90, level = 2, defense = 4, skill = 'Velocidade'),
+  Hero(
+    name='Batman',
+    health=100,
+    level=2,
+    defense=5,
+    skill='Estrategista'
+  ),
+  Hero(
+    name='Superman',
+    health=120,
+    level=3,
+    defense=6,
+    skill='Força'
+  ),
+  Hero(
+    name='Mulher Maravilha',
+    health=110,
+    level=2,
+    defense=7,
+    skill='Agilidade'
+  ),
+  Hero(
+    name='Flash',
+    health=90,
+    level=2,
+    defense=4,
+    skill='Velocidade'
+  ),
 ]
   
 class Enemy(Character):
@@ -74,12 +98,36 @@ class Enemy(Character):
     return f'{base_info}, \nTipo: {self.__type}'
 
 enemies = [
-  Enemy(name='Coringa', health = 100, level = 2, defense = 5, type = 'Psicopata'),
-  Enemy(name='Lex Luthor', health = 110, level = 3, defense = 6, type = 'Gênio'),
-  Enemy(name='Ares', health = 120, level = 3, defense = 7, type = 'Deus da Guerra'),
-  Enemy(name='Capuz Vermelho', health = 90, level = 2, defense = 4, type = 'Vigilante'),
+  Enemy(
+    name='Coringa',
+    health=100,
+    level=2,
+    defense=5,
+    type='Psicopata'
+  ),
+  Enemy(
+    name='Lex Luthor',
+    health=110,
+    level=3,
+    defense=6,
+    type='Gênio'
+  ),
+  Enemy(
+    name='Ares',
+    health=120,
+    level=3,
+    defense=7,
+    type='Deus da Guerra'
+  ),
+  Enemy(
+    name='Capuz Vermelho',
+    health=90,
+    level=2,
+    defense=4,
+    type='Vigilante'
+  ),
 ]
-  
+
 class Game:
   def __init__(self):
     self.hero = None
@@ -96,6 +144,7 @@ class Game:
       print(f'Você escolheu o herói:\n{self.hero.show_info()}')
       self.enemy = random.choice(enemies)
       print(f'Seu inimigo será:\n{self.enemy.show_info()}')
+
 
     elif choose_class == 2:
       print('Escolha seu Personagem: ')
