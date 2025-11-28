@@ -8,20 +8,20 @@ class Character:
     self.level = level
     self.defense = defense
 
-    def get_name(self):
-      return self.name
-    
-    def get_health(self):
-      return self.health
-    
-    def get_level(self):
-      return self.level
-    
-    def get_defense(self):
-      return self.defense
-    
-    def show_info(self):
-      return f'Nome: {self.name}, Vida: {self.health}, Nível: {self.level}, Defesa: {self.defense}'
+  def get_name(self):
+    return self.name
+  
+  def get_health(self):
+    return self.health
+  
+  def get_level(self):
+    return self.level
+  
+  def get_defense(self):
+    return self.defense
+  
+  def show_info(self):
+    return f'Nome: {self.name}, Vida: {self.health}, Nível: {self.level}, Defesa: {self.defense}'
     
     # # Attack, Defense and Damage methods
     # def attack(self, target):
@@ -82,8 +82,35 @@ enemies = [
   
 class Game:
   def __init__(self):
-    # self.hero = Hero(name = 'Batman', health = 100, level = 2, defense = 5, skill = 'Estrategista')
+    self.hero = None
+    self.enemy = None
+  def start(self):
+    choose_class = int(input('\n1 - Herói\n2 - Inimigo\nEscolha a classe do seu personagem e digite o núemero desejado:'))
 
-    # self.enemy = Enemy(name = 'Coringa', health = 100, level = 2, defense = 5, type = 'Psicopata')
+    if choose_class == 1:
+      print('Escolha seu Personagem:')
+      for index, hero in enumerate(heroes):
+        print(f'{index + 1} - {hero.show_info()}')
+      hero_choice = int(input('Digite o número do herói:')) 
+      self.hero = heroes[hero_choice - 1]
+      print(f'Você escolheu o herói:\n{self.hero.show_info()}')
+      self.enemy = random.choice(enemies)
+      print(f'Seu inimigo será:\n{self.enemy.show_info()}')
 
+    elif choose_class == 2:
+      print('Escolha seu Personagem: ')
+      for index, enemy in enumerate(enemies):
+        print(f'{index + 1} - {enemy.show_info()}')
+        enemy_choice = int(input('Digite o número do vilão:'))
+        self.enemy = enemies[enemy_choice -1]
+        print(f'Você escolheu o vilão:\n{self.enemy.show_info()}')
+        self.hero = random.choice(heroes)
+        print(f'Seu inimigo será:\n{self.hero.show_info()}')
+    else:
+      print('Opção inválida. Por favor, escolha 1 ou 2.')
+  
+  # def start_battle(self):
+
+game = Game()
+game.start()
     
