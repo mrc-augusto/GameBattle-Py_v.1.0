@@ -20,6 +20,15 @@ class Character:
   def get_defense(self):
     return self.defense
   
+  def attack(self, target):
+    pass
+
+  def special_attack(self, target):
+    pass
+
+  def take_damage(self,damage):
+    pass
+  
   def show_info(self):
     return f'Nome: {self.name}, Vida: {self.health}, Nível: {self.level}, Defesa: {self.defense}'
     
