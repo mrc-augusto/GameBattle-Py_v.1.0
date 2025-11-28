@@ -20,23 +20,21 @@ class Character:
     def get_defense(self):
       return self.defense
     
-    def show_info(self):
-      return f'Nome: {self.name}, Vida: {self.health}, Nível: {self.level}, Defesa: {self.defense}'
+    def attack(self, target):
+      damage = random.randint(self.level *2, self.level *5)
+      target.take_damage(damage)
+      print(f'{self.name} atacou {target.get_name()} causando {damage} de dano!')
     
-    # # Attack, Defense and Damage methods
-    # def attack(self, target):
-    #   damage = random.randint(self.get_leve() * 2, self.get_level() * 4)
-    #   target.take_damage(damage)
-    #   print(f'{self.get_name()} atacou {target.get_name()} causando {damage} de dano!')
+    def special_attack(self, target):
+      special_damage = random.randint(self.level *4, self.level *7)
+      target.take_damage(special_damage)
+      print(f'{self.name} usou um ataque especial em {target.get_name()} causando {special_damage} de dano!')
 
-    # def special_attack(self, target):
-    #   pass
-
-    # def damage(self, damage):
-    #   pass
-
-    # def defense(self, target):
-    #   pass
-
-    # def special_defense(self, target):
-    #   pass
+    def take_damage(self, damage):
+      real_damage = damage - self.defense
+      self.health -= real_damage
+      print(f'{self.name} recebeu {real_damage} de dano! Vida restante: {self.healh}')
+    
+    def show_info(self):
+      return f'Nome: {self.name}, \nVida: {self.health}, \nNível: {self.level}, \nDefesa: {self.defense}'
+    
